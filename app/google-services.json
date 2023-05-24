@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "400897590504",
+    "project_id": "safe-valet-captain",
+    "storage_bucket": "safe-valet-captain.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400897590504:android:5a3fc1b4338df4bd24755d",
+        "android_client_info": {
+          "package_name": "com.example.safevaletcaptain"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "400897590504-hm5j851g4qfpm1c8j7qviigb196p97p4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7tA1_HBt_Y06W7OPAKwQZFN4q_n_M9Qk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400897590504-hm5j851g4qfpm1c8j7qviigb196p97p4.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

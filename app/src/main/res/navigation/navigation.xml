@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/nav_graph.xml"
+        app:startDestination="@id/homeFragment">
+
+        <fragment
+            android:id="@+id/homeFragment"
+            android:name="com.example.safevaletcaptain.fragments.HomeFragment"
+            android:label="HomeFragment"
+            tools:layout="@layout/fragment_home"/>
+        <activity
+            android:id="@+id/notfication"
+            android:name="com.example.safevaletcaptain.fragments.Notfication"
+            android:label="activity_notfication"
+            tools:layout="@layout/activity_notfication" />
+    <activity
+        android:id="@+id/languageFragment"
+        android:name="com.example.safevaletcaptain.fragments.LanguageFragment"
+        android:label="choose_language"
+        tools:layout="@layout/choose_language" />
+
+
+</navigation>

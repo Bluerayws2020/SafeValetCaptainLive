@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="blue">#2596be</color>
+
+    <color name="colorPrimary">#C5C5C5</color>
+    <color name="colorPrimaryDark">#000000</color>
+    <color name="colorAccent">#83413C</color>
+
+    <color name="text_color">#1E4175</color>
+    <color name="background_color">#ecf0f3</color>
+    <color name="highlight">#ffffff</color>
+    <color name="shadow_color">#d9dbde</color>
+    <color name="shadow_color_text">#525C5D5F</color>
+    <color name="gray">#fefffc</color>
+    <color name="grays">#FFF2F2F3</color>
+
+    <color name="border">#fefffc</color>
+    <color name="signupBtn">#d2d9ec</color>
+    <color name="signupBtnTxt">#259edc</color>
+    <color name="langColor">#282A2E</color>
+    <color name="silver">#36373A</color>
+    <color name="instruction">#383C3E</color>
+    <color name="driver">#E7F5FB</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
+    <color name="light_blue_A200">#FF40C4FF</color>
+    <color name="light_blue_A400">#FF00B0FF</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="red">#66FD0000</color>
+
+    <color name="green">#4CAF50</color>
+
+
+
+</resources>

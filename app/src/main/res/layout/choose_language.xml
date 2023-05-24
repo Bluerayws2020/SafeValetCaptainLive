@@ -1,0 +1,98 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue"
+    tools:context=".fragments.LanguageFragment"
+    >
+
+
+
+    <include
+        android:id="@+id/toolbar_include"
+        layout="@layout/customemenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="200dp"
+        android:background="@drawable/rounded_box"
+        android:backgroundTint="@color/white"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/choose_language"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/whitelang"
+            android:backgroundTint="@color/blue"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/englishBtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="15dp"
+                android:text="@string/english"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/whitelang"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/arabic_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/arabic"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                tools:ignore="RtlCompat" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

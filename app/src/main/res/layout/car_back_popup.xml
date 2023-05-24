@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    android:background="#B2F2F2F2"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        android:backgroundTint="@color/gray">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="540dp"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+
+                android:src="@drawable/carpopop"
+              />
+
+            <TextView
+                android:id="@+id/carName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="22dp"
+                android:gravity="center"
+                android:text="@string/the_car_will_parked"
+                android:textColor="@color/black"
+
+                android:textSize="20sp"
+                />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/backCarToPark"
+                android:layout_width="330dp"
+                android:layout_height="60dp"
+                android:text="send Notficatio close"
+                android:backgroundTint="#3E8B71"
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+android:visibility="gone"
+                app:cardCornerRadius="30dp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="back Car to the Park"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="20sp"
+
+                    />
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:id="@+id/containerCarPark"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/sendNotfitionClose"
+                    android:layout_width="330dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:backgroundTint="@color/blue"
+                    android:text="send Notficatio close"
+                    android:textSize="15sp"
+
+                    app:cardCornerRadius="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/send_notficatio_i_am_close"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+
+                        />
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/sendNotfitionIamHere"
+                    android:layout_width="330dp"
+                    android:layout_height="60dp"
+
+                    android:layout_gravity="center"
+
+                    android:layout_margin="20dp"
+                    android:backgroundTint="@color/blue"
+                    android:textSize="15sp"
+
+                    app:cardCornerRadius="30dp">
+
+                    <TextView
+                        android:id="@+id/heretxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="@string/send_notficatio_i_am_here_1"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+
+                        />
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+            <TextView
+                android:id="@+id/carNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="22dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginRight="22dp"
+                android:gravity="center"
+                android:text="@string/press_the_button_below_when_delivering_the_car_to_the_customer"
+                android:textColor="@color/black"
+
+                android:textSize="20sp"
+
+                />
+
+
+
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/backCarBtn"
+                    android:layout_width="330dp"
+                    android:layout_height="60dp"
+                    android:backgroundTint="#3E8B71"
+                    android:textSize="15sp"
+android:layout_gravity="center"
+android:layout_margin="20dp"
+
+                    app:cardCornerRadius="30dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="@string/line_app_car"
+                       android:layout_gravity="center"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="20sp"
+
+                        />
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

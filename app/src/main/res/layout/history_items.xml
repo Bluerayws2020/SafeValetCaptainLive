@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soup.neumorphism.NeumorphCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/product_card"
+    android:layout_width="wrap_content"
+    android:layout_height="250dp"
+    style="@style/Widget.Neumorph.CardView"
+    app:neumorph_shadowColorLight="@color/border"
+    app:neumorph_shadowColorDark="@color/border"
+    app:neumorph_backgroundColor="@color/grays"
+    app:neumorph_shapeType="pressed"
+    app:neumorph_shadowElevation="6dp"
+    android:background="@drawable/rounded_box"
+
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+    <TextView
+        android:id="@+id/tottalTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:layout_weight="1"
+
+        android:text="@string/_14_10_2022"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/linear2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraint1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="invisible"
+
+        app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/_14_10_2022"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/linear2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.757"
+            app:layout_constraintStart_toEndOf="@+id/tottalTime"
+            app:layout_constraintTop_toBottomOf="@+id/constraint1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/constraint1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/linearlyout1"
+        app:layout_constraintTop_toTopOf="parent">
+        <ImageView
+            android:id="@+id/drop_stat"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ellipse7" />
+
+        <ImageView
+            android:id="@+id/drop_end"
+            android:layout_width="20dp"
+            android:layout_height="110dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/vector" />
+
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/pin4" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearlyout1"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+        app:layout_constraintTop_toTopOf="@+id/linearlyout1">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:id="@+id/carNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/_35_98634"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/carName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/mercedes_s_class_2022"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/carIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/white_rounded_rectangle"
+            android:src="@drawable/bluecar" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/startTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/_12_45_pm"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/parking"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text="@string/parking"
+                android:textAlignment="center"
+                android:textColor="@color/red"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/linearLayout"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+android:id="@+id/driverName"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="@string/client_name_ahmed"
+            android:textColor="@color/black"
+            android:textSize="10sp" />
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="----------------------------------------------"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/typeStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="@string/parking"
+            android:textAlignment="center"
+            android:textColor="@color/red"
+            android:padding="2dp"
+            android:textSize="11sp" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="100dp"
+        android:orientation="horizontal"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout4"
+        app:layout_constraintTop_toTopOf="@+id/linear2">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+
+            >
+
+            <TextView
+                android:id="@+id/carNumber2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/_35_98634"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/carName2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/mercedes_s_class_2022"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/carIcon2"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/white_rounded_rectangle"
+            android:src="@drawable/blcar" />
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/endtime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/_01_45_pm"
+                android:textAlignment="center"
+                android:textColor="@color/blue"
+                android:textSize="10sp" />
+
+
+            <TextView
+                android:id="@+id/pickUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text="@string/pick_up"
+                android:textAlignment="center"
+                android:textColor="@color/green"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+</soup.neumorphism.NeumorphCardView>
+
+

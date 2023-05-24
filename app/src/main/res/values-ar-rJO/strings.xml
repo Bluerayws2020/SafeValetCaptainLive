@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Valet Captain</string>
+    <string name="scan_qr_code">امسح QR</string>
+    <string name="available_orders">السيارات المتاحة</string>
+    <string name="car_no">رقم السيارة</string>
+    <string name="key_no">رقم المفتاح</string>
+    <string name="trip_in_progress">الرحلة في تقدم</string>
+    <string name="trip_as_completed">اكمال الرحللة</string>
+    <string name="time">الوقت</string>
+    <string name="completed">اكتملت</string>
+    <string name="take_check_in_photo">التقط صورة</string>
+    <string name="directions">الاتجاهات</string>
+    <string name="pick_up_the_car">احضار المركبة</string>
+    <string name="start_driving">ابداء القيادة</string>
+    <string name="choose_language">اختر اللغة</string>
+    <string name="history">السجل</string>
+    <string name="share">مشاركة</string>
+    <string name="settings">اعدادت</string>
+    <string name="language">اللغة</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="mobile_number">رقم الهاتف</string>
+    <string name="username">اسم المستخدم</string>
+    <string name="save">حفظ</string>
+    <string name="station_name">اسم المحطة</string>
+    <string name="choose_the_station">اختر المحطة</string>
+    <string name="pick_up">اخذ</string>
+    <string name="take_order">اخذ الطلب</string>
+    <string name="History">السجل</string>
+    <string name="Lang">اللغة</string>
+    <string name="CompleteTrip">اكمال الرحلة</string>
+    <string name="Cardelivery">تسليم السيارة</string>
+    <string name="Notfication">التنبيهات</string>
+    <string name="tskeOrder">أخذ الطلب</string>
+    <string name="home">الرئيسية</string>
+    <string name="done" >تم</string>
+    <string name="cancel" >الغاء</string>
+    <string name="offWork" >انت متوقف عن العمل</string>
+    <string name="key_number">رقم المفتاح</string>>
+
+    <string name="when_you_stop_working_you_will_not_receive_work_notifications">عند التوقف عن العمل لن تصلك الاشعارات الخاصة بالعمل</string>
+    <string name="location_description">وصف الموقع</string>
+    <string name="valdateKey">يرجى اضافة رقم المفتاح </string>
+    <string name="resend_code_30">اعادة ارسال بعد (%s) ثانية</string>
+    <string name="not_receive_code">Did not receive a verification code ?</string>
+    <string name="check">تحقق</string>
+    <string name="verification_required">يجب التحقق من الرمز</string>
+    <string name="code_verification_header"> سيتم ارسال كود على رقم الهاتف الخاص بك لتفعيل حسابك </string>
+    <string name="enter_code">ادخل الرمز</string>
+    <string name="resend_code">اعادة ارسال الرمز</string>
+    <string name="loading">يرجى الانتظار</string>
+
+    <string name="send_notficatio_i_am_close">ارسل اشعار انا افتربت</string>
+    <string name="line_app_car">تم الاصطفاف</string>
+    <string name="press_the_button_below_when_delivering_the_car_to_the_customer">
+اضغط على الزر الموجود في الاسفل عند تسليم السيارة لعميل
+    </string>
+    <string name="the_car_will_parked">السيارة قيد الاصطفاف</string>
+    <string name="tottalTime"> (%s) مجموع الوقت : </string>
+
+
+    <string name="driverInActive">انت متوقف عن العمل في حال الرغبة في العودة للعمل يرجى التفعيل من خلال الايقونة </string>
+    <string name="parking">اصطفاف</string>
+    <string name="send_notficatio_i_am_here_1">(%s)ارسال اشعار انا هنا </string>
+    <string name="send_notficatio_i_am_here">ارسل اشعار انا هنا</string>
+
+</resources>

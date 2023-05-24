@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/custom_shape.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/custom_thumb.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/custom_track.xml" value="0.112" />
+        <entry key="app/src/main/res/drawable/ic_baseline_toggle_off_24.xml" value="0.162" />
+        <entry key="app/src/main/res/drawable/ic_baseline_toggle_on_24.xml" value="0.19" />
+        <entry key="app/src/main/res/drawable/my_edit_text_border.xml" value="0.2105" />
+        <entry key="app/src/main/res/drawable/rounded_box.xml" value="0.1095" />
+        <entry key="app/src/main/res/drawable/toggle_selector.xml" value="0.162" />
+        <entry key="app/src/main/res/layout/action_customp_popup.xml" value="0.17074275362318841" />
+        <entry key="app/src/main/res/layout/activity_home.xml" value="0.13638516939603362" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_notfication.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/activity_station_list.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/activity_web_view_page.xml" value="0.23125" />
+        <entry key="app/src/main/res/layout/car_back_popup.xml" value="0.22935943603515627" />
+        <entry key="app/src/main/res/layout/car_items.xml" value="0.2805526733398438" />
+        <entry key="app/src/main/res/layout/cell_menu_item.xml" value="0.11851851851851852" />
+        <entry key="app/src/main/res/layout/choose_language.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/custome_popup.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/customemenu.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/customesidemenu.xml" value="0.2125" />
+        <entry key="app/src/main/res/layout/foreign_trips_popup_window.xml" value="0.23177083333333334" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.125" />
+        <entry key="app/src/main/res/layout/history.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/history_items.xml" value="0.36456145979177246" />
+        <entry key="app/src/main/res/layout/keep.xml" value="0.12760416666666666" />
+        <entry key="app/src/main/res/layout/lang_activaty.xml" value="0.22760416666666666" />
+        <entry key="app/src/main/res/layout/onn_off_popup.xml" value="0.2638687133789063" />
+        <entry key="app/src/main/res/layout/otp_activaty.xml" value="0.11040649414062498" />
+        <entry key="app/src/main/res/layout/pick_up_the_car.xml" value="0.2233636340955748" />
+        <entry key="app/src/main/res/layout/prograssdiloag.xml" value="0.23229166666666667" />
+        <entry key="app/src/main/res/layout/qr_scanner.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/send_notification_popup_window.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/station.xml" value="0.21354166666666666" />
+        <entry key="app/src/main/res/layout/stationlistitem.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/trip_in_progress.xml" value="0.1572357177734375" />
+        <entry key="app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/toolbar.xml" value="0.21354166666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.1572357177734375" />
+      </ProjectState>
+    </option>
+  </component>
+</project>
