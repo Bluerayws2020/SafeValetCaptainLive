@@ -5,6 +5,7 @@ import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,6 +25,9 @@ import com.example.safevaletcaptain.model.NotficationDataResponse
 import com.example.safevaletcaptain.viewmodel.RideViewModel
 
     class Notfication: AppCompatActivity(){
+        init {
+            d("ayham","Notfication")
+        }
 
         private var navController: NavController? = null
         private var notficationAdabter: NotficationAdabter? = null

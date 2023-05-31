@@ -1,5 +1,8 @@
 package com.example.safevaletcaptain.fragments
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
+import android.annotation.SuppressLint
 import android.app.ActionBar
 import android.app.Dialog
 import android.content.Context
@@ -12,11 +15,15 @@ import android.location.Location
 import android.location.LocationManager
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.util.Log
+import android.util.Log.d
+import android.util.Log.e
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.LinearInterpolator
 import android.widget.*
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -33,6 +40,7 @@ import com.example.safevaletcaptain.databinding.FragmentHomeBinding
 import com.example.safevaletcaptain.helpers.HelperUtils
 import com.example.safevaletcaptain.helpers.ViewUtils.hide
 import com.example.safevaletcaptain.helpers.ViewUtils.show
+import com.example.safevaletcaptain.model.DriverResponseINFO
 import com.example.safevaletcaptain.model.NetworkResults
 import com.example.safevaletcaptain.model.RideModel
 import com.example.safevaletcaptain.model.StationsName
@@ -46,10 +54,15 @@ import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanIntentResult
 import com.journeyapps.barcodescanner.ScanOptions
 import com.onesignal.OneSignal
+import kotlinx.coroutines.*
+import kotlin.properties.Delegates
 
 
 class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
     AdapterView.OnItemSelectedListener {
+    init {
+        d("ayham","HomeFragment")
+    }
     private lateinit var locationManager: LocationManager
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     companion object {
@@ -58,6 +71,8 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
     private val locationPermissionCode = 2
     private val stationListItem = mutableListOf<StationsName>()
     private val stationNameList = mutableListOf<String>()
+    private var newStatus  = 0
+    private lateinit var result1 :DriverResponseINFO
 
     private var navController: NavController? = null
     private var res: String? = null
@@ -103,6 +118,142 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
         return FragmentHomeBinding.inflate(inflater, container, false)
     }
 
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        //   uncompleted Trip
+        rideViewModel.driverWithCustomerInfo().observe(viewLifecycleOwner) { result ->
+            when (result) {
+
+                is NetworkResults.Success -> {
+
+                    binding.unCompletedTrip.show()
+
+                    val mlang  = HelperUtils.getLang(context)
+
+
+//                    check if user dose not complete driver parck
+
+                    var msg = ""
+                    if (mlang == "ar"){
+                        msg = "تأكيد معلومات السيارة"
+
+                    }else {
+                        msg =  "Car information confirmation"
+
+                    }
+
+//confirm Informationn
+                    if (result.data.msg.newStatus == 1 &&  result.data.msg.message == msg) {
+
+                        binding.unCompletedTrip.show()
+
+                        binding.unCompletedTrip.setOnClickListener{
+                            toast(result.data.msg.message)
+
+//                            val intent = Intent(context,TripInProgressFragment::class.java);
+//                            intent.putExtra("ride_id", result.data.customerInfo?.rideId)
+//                            intent.putExtra("carNumber", result.data.customerInfo?.carNumber)
+//
+//                            intent.putExtra("lat",latLocation)
+//                            intent.putExtra("lon", longLocation)
+//
+//                            context?.startActivity(intent);
+
+
+
+                            showCustomePopUp(
+                                result.data.customerInfo?.carNickName.toString(),
+                                result.data.customerInfo?.carNumber.toString(),
+                                rideId
+                            )
+
+                        }
+
+                    }
+//                        uncompleted Ride
+
+                    if (result.data.msg.newStatus == 2 || result.data.msg.newStatus == 3) {
+                        toast(result.data.msg.newStatus.toString())
+
+                        binding.unCompletedTrip.show()
+
+                        binding.unCompletedTrip.setOnClickListener{
+                            toast(result.data.msg.message)
+
+                            val intent = Intent(context,TripInProgressFragment::class.java)
+                            intent.putExtra("ride_id", result.data.customerInfo?.rideId)
+                            intent.putExtra("carNumber", result.data.customerInfo?.carNumber)
+
+                            intent.putExtra("lat",latLocation)
+                            intent.putExtra("lon", longLocation)
+
+                            context?.startActivity(intent)
+                        }
+
+                    }
+//                    pick car from park
+                    if (result.data.msg.newStatus == 4 ){
+                        binding.unCompletedTrip.show()
+
+                        binding.unCompletedTrip.setOnClickListener {
+
+                            val intent = Intent(context, PickingCarFragment::class.java)
+                            intent.putExtra("ride_id", result.data.customerInfo?.rideId)
+                            intent.putExtra("carNumber", result.data.customerInfo?.carNumber)
+
+                            intent.putExtra("lat", latLocation)
+                            intent.putExtra("lon", longLocation)
+
+                            context?.startActivity(intent)
+                        }
+
+                    }
+
+
+//                  check if user dose Not Complete Car Back
+                    var msgUncompleteCarBackk = ""
+                    if (mlang ==  "ar"){
+                        msgUncompleteCarBackk = "السيارة قيد التسليم"
+                    }else {
+                        msgUncompleteCarBackk = "The car is under delivery to the customer"
+                    }
+
+                    if (result.data.msg.status == 2  && result.data.msg.message == msgUncompleteCarBackk) {
+
+                        binding.unCompletedTrip.show()
+                        binding.unCompletedTrip.setOnClickListener{
+
+
+                            val intent = Intent(context,PickingCarFragment::class.java)
+                            intent.putExtra("ride_id", result.data.customerInfo?.rideId)
+                            intent.putExtra("car_number", result.data.customerInfo?.carNumber)
+
+
+                            intent.putExtra("lat",latLocation)
+                            intent.putExtra("lon", longLocation)
+
+                            context?.startActivity(intent)
+                        }
+
+                    }
+
+                }
+                is NetworkResults.Error -> {
+                    binding.unCompletedTrip.show()
+                    e("ayham",result.exception.toString())
+                    result.exception.printStackTrace()
+                }
+            }
+
+        }
+        rideViewModel.getdriverCustomerInfo()
+        return super.onCreateView(inflater, container, savedInstanceState)
+
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -117,7 +268,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
 
 //        to get availble ride when notfication comming
         oneSignalShowNotfication()
-        driverWithCustomer()
+        //driverWithCustomer()
 
         rideViewModel.getAvalibleRide()
 
@@ -129,6 +280,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
             binding.noDatatxt.hide()
             rideViewModel.getAvalibleRide()
             rideViewModel.getdriverCustomerStatus()
+
 
         }
         rideViewModel.getAvalibleRide()
@@ -174,8 +326,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
 
 
 
-//        uncompletd Trip
-        checkUnCompletedTrip()
+
 
 
 //        rideViewModel.getdriverCustomerInfo()
@@ -195,9 +346,46 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
 
         binding.showMyQRImg.setOnClickListener(this)
 
+        //image rotation animation
+        CoroutineScope(Dispatchers.Main).launch {
+            while (true) {
+                val rotationAnimator = ObjectAnimator.ofFloat(binding.showMyQRImg, "rotationY", 0f, 360f)
+                rotationAnimator.duration = 2000 // Duration of rotation in milliseconds
+                rotationAnimator.repeatMode = ObjectAnimator.RESTART // Repeat from the beginning
+                rotationAnimator.interpolator = LinearInterpolator()
+                rotationAnimator.start()
+                rotationAnimator.startDelay =2000
+                delay(3000) // Delay for 2 seconds before starting the next rotation
+            }
+        }
+        CoroutineScope(Dispatchers.Main).launch {
+            while (true) {
+                val rotationAnimator = ObjectAnimator.ofFloat(binding.reload, "rotation", 0f, 360f)
+                rotationAnimator.duration = 500 // Duration of rotation in milliseconds
+                rotationAnimator.repeatMode = ObjectAnimator.RESTART // Repeat from the beginning
+                rotationAnimator.interpolator = LinearInterpolator()
+                rotationAnimator.start()
+                rotationAnimator.startDelay =2000
+
+                delay(5000) // Delay for 2 seconds before starting the next rotation
+            }
+        }
+        binding.reload.setOnClickListener {
+            binding.carItems.adapter = null
+            binding.progressBarCate.show()
+            binding.noDatatxt.hide()
+            rideViewModel.getAvalibleRide()
+            rideViewModel.getdriverCustomerStatus()
+        }
+
+
+
+
 
 
     }
+
+
 
 
 
@@ -238,6 +426,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
 
                         setupRecyclerView(result.data.ride_data.myRides)
                         binding.progressBarCate.hide()
+                        binding.noDatatxt.hide()
 
                         if(result.data.ride_data.myRides.isEmpty()){
                             binding.noDatatxt.show()
@@ -282,7 +471,7 @@ class HomeFragment: BaseFragment<FragmentHomeBinding>(), View.OnClickListener,
                         if (result.data.msg.status == 1) {
 
 //                            showCustomePopUp( result.data.customerInfo?.carNickName.toString(),result.data.customerInfo?.carNumber.toString(),rideId,myDialog)
-                            rideViewModel.getdriverCustomerInfo()
+//                            rideViewModel.getdriverCustomerInfo()
                             driverWithCustomer()
 
                         }
@@ -409,6 +598,7 @@ Log.d("DTTTTTTTA",result.contents.toString() + latLocation.toString() + longLoca
     }
 
     //takeCar Back
+    @SuppressLint("SuspiciousIndentation")
     fun takeOrderBack() {
         binding.progressBarCate.show()
         rideViewModel.getTakeCarBack().observe(this) { result ->
@@ -560,132 +750,14 @@ myDialog.dismiss()
 
 //    Driver With Customer Info Firest Request On API
 
-    fun  checkUnCompletedTrip(){
-
-        rideViewModel.driverWithCustomerInfo().observe(viewLifecycleOwner) { result ->
-            when (result) {
-
-                is NetworkResults.Success -> {
-                    val mlang  = HelperUtils.getLang(context)
-
-
-//                    check if user dose not complete driver parck
-
-                    var msg = ""
-                    if (mlang == "ar"){
-                        msg = "تأكيد معلومات السيارة"
-
-                    }else {
-                        msg =  "Car information confirmation"
-
-                    }
-
-//confirm Informationn
-                    if (result.data.msg.newStatus == 1 &&  result.data.msg.message == msg) {
-
-                        binding.unCompletedTrip.show()
-
-                        binding.unCompletedTrip.setOnClickListener{
-                            toast(result.data.msg.message)
-
-//                            val intent = Intent(context,TripInProgressFragment::class.java);
-//                            intent.putExtra("ride_id", result.data.customerInfo?.rideId)
-//                            intent.putExtra("carNumber", result.data.customerInfo?.carNumber)
+//    fun  checkUnCompletedTrip(){
 //
-//                            intent.putExtra("lat",latLocation)
-//                            intent.putExtra("lon", longLocation)
 //
-//                            context?.startActivity(intent);
-
-
-
-                                showCustomePopUp(
-                                    result.data.customerInfo?.carNickName.toString(),
-                                    result.data.customerInfo?.carNumber.toString(),
-                                    rideId
-                                )
-
-                        }
-
-                    }
-//                        uncompleted Ride
-
-                     if (result.data.msg.newStatus == 2 || result.data.msg.newStatus == 3) {
-                        toast(result.data.msg.newStatus.toString())
-
-                        binding.unCompletedTrip.show()
-
-                        binding.unCompletedTrip.setOnClickListener{
-toast(result.data.msg.message)
-
-                            val intent = Intent(context,TripInProgressFragment::class.java)
-                            intent.putExtra("ride_id", result.data.customerInfo?.rideId)
-                            intent.putExtra("carNumber", result.data.customerInfo?.carNumber)
-
-                            intent.putExtra("lat",latLocation)
-                            intent.putExtra("lon", longLocation)
-
-                            context?.startActivity(intent)
-                        }
-
-                    }
-//                    pick car from park
-                     if (result.data.msg.newStatus == 4 ){
-                         binding.unCompletedTrip.show()
-
-                         binding.unCompletedTrip.setOnClickListener {
-
-                            val intent = Intent(context, PickingCarFragment::class.java)
-                             intent.putExtra("ride_id", result.data.customerInfo?.rideId)
-                            intent.putExtra("carNumber", result.data.customerInfo?.carNumber)
-
-                            intent.putExtra("lat", latLocation)
-                            intent.putExtra("lon", longLocation)
-
-                            context?.startActivity(intent)
-                         }
-
-                    }
-
-
-//                  check if user dose Not Complete Car Back
-                    var msgUncompleteCarBackk = ""
-                    if (mlang ==  "ar"){
-                        msgUncompleteCarBackk = "السيارة قيد التسليم"
-                    }else {
-                        msgUncompleteCarBackk = "The car is under delivery to the customer"
-                    }
-
-                    if (result.data.msg.status == 2  && result.data.msg.message == msgUncompleteCarBackk) {
-
-                        binding.unCompletedTrip.show()
-                        binding.unCompletedTrip.setOnClickListener{
-
-
-                            val intent = Intent(context,PickingCarFragment::class.java)
-                            intent.putExtra("ride_id", result.data.customerInfo?.rideId)
-                            intent.putExtra("car_number", result.data.customerInfo?.carNumber)
-
-
-                            intent.putExtra("lat",latLocation)
-                            intent.putExtra("lon", longLocation)
-
-                            context?.startActivity(intent)
-                        }
-
-                    }
-
-                }
-                is NetworkResults.Error -> {
-                    result.exception.printStackTrace()
-                }
-            }
-        }
-
-
-
-
-    }
+//
+//
+//
+//
+//    }
 
 //Driver Statuts (Confirm Ride )
 
@@ -717,7 +789,6 @@ toast(result.data.msg.message)
                 }
             }
         }
-
 
 
 

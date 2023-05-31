@@ -8,6 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.preference.PreferenceManager
 import android.util.Log
+import android.util.Log.d
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -21,6 +22,9 @@ import java.util.*
 
 class MainActivity : AppCompatActivity() , View.OnClickListener   {
 
+    init {
+        d("ayham","MainActivity")
+    }
     private lateinit var binding: ActivityMainBinding
     private var navController: NavController? = null
 

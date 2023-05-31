@@ -8,6 +8,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.d
 import android.webkit.*
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -19,6 +20,9 @@ import com.example.safevaletcaptain.helpers.ViewUtils.hide
 import com.example.safevaletcaptain.helpers.ViewUtils.show
 
 class WebViewPage : AppCompatActivity() {
+    init {
+        d("ayham","WebViewPage")
+    }
     private lateinit var binding: ActivityWebViewPageBinding
 
     private var uploadCallback: ValueCallback<Array<Uri>>? = null

@@ -24,7 +24,9 @@ import com.onesignal.OneSignal
 import retrofit2.HttpException
 
 class LoginActivity : AppCompatActivity(), OSSubscriptionObserver {         //, View.OnClickListener {
-
+    init {
+        Log.d("ayham", "LoginActivity")
+    }
     private lateinit var binding: ActivityLoginBinding
     private val driverVM by viewModels<DriverViewModel>()
 

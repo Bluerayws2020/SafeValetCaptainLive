@@ -234,7 +234,7 @@
             android:layout_marginTop="70dp"
             android:layout_marginEnd="20dp"
             android:layout_marginStart="20dp"
-android:visibility="gone"
+            android:visibility="gone"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -282,13 +282,12 @@ android:layout_margin="10dp"
         android:id="@+id/send_btn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
-
         android:text="@string/done"
         app:layout_constraintBottom_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:cornerRadius="15dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

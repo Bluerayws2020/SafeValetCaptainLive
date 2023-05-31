@@ -2,6 +2,7 @@ package com.example.safevaletcaptain.fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log.d
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
@@ -18,6 +19,11 @@ import com.example.safevaletcaptain.model.StationsName
 import com.example.safevaletcaptain.viewmodel.RideViewModel
 
 class StationList : AppCompatActivity() {
+
+    init {
+        d("ayham","StationList")
+    }
+
     private var navController: NavController? = null
     private var statAdapter: StationAdabter? = null
     private val rideViewModel by viewModels<RideViewModel>()

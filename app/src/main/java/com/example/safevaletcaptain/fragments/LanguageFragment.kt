@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +25,9 @@ import java.util.*
 
 class LanguageFragment: AppCompatActivity()
 {
-
+    init {
+        d("ayham","LanguageFragment")
+    }
     private lateinit var binding: LangActivatyBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

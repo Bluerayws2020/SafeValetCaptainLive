@@ -6,8 +6,10 @@ import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.d
 import android.view.Gravity
 import android.view.View
+import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.PopupWindow
 import android.widget.TextView
@@ -30,6 +32,10 @@ import com.google.android.material.card.MaterialCardView
 
 
 class PickingCarFragment: AppCompatActivity() {
+
+    init {
+        d("ayham","PickingCarFragment")
+    }
 
     private var navController: NavController? = null
     private var carAdapter: CarAdapter? = null
@@ -173,24 +179,26 @@ Log.d("LATTT",lat)
         mpopup!!.showAtLocation(popUpView, Gravity.CENTER, 0, 0) // Displaying popup
 
 
-        val backCarToPark: MaterialCardView =
-            popUpView.findViewById<View>(R.id.backCarToPark) as MaterialCardView
-        val iamCloseBtn: MaterialCardView =
-            popUpView.findViewById<View>(R.id.sendNotfitionClose) as MaterialCardView
-        val iamHereBtn: MaterialCardView =
-            popUpView.findViewById<View>(R.id.sendNotfitionIamHere) as MaterialCardView
-        val lineUpCar: MaterialCardView =
-            popUpView.findViewById<View>(R.id.backCarBtn) as MaterialCardView
+        val backCarToPark =
+            popUpView.findViewById<Button>(R.id.backCarToPark)
+        val iamCloseBtn: Button =
+            popUpView.findViewById<Button>(R.id.sendNotfitionClose)
+//        val iamHereBtn: MaterialCardView =
+//            popUpView.findViewById<View>(R.id.sendNotfitionIamHere) as MaterialCardView
+        val lineUpCar: Button =
+            popUpView.findViewById<Button>(R.id.backCarBtn)
 
         val containerCarPark: LinearLayout =
             popUpView.findViewById<View>(R.id.containerCarPark) as LinearLayout
-        val heretxt: TextView = popUpView.findViewById<View>(R.id.heretxt) as TextView
-
+        val heretxt: Button = popUpView.findViewById<Button>(R.id.heretxt)
+        var count = 0
+        heretxt.text = getString(
+            R.string.send_notficatio_i_am_here_1,
+            count.toString(),
+        )
 
         lineUpCar.setOnClickListener {
             endTrip("1", "1")
-
-
         }
 
         backCarToPark.setOnClickListener {
@@ -199,20 +207,24 @@ Log.d("LATTT",lat)
 //         startActivity(Intent(this,home))
             onBackPressed()
         }
-        var count = 0
+
         heretxt.setOnClickListener {
-
-
-            if (HelperUtils.getLang(this) == "ar"){
-                heretxt.text  = "Send Notfication I am Here ($count) "
-
-            }else {
-                heretxt.text  = "ارسل اشعار انا هنا ($count)"
-
-            }
-
-
             count++
+            heretxt.text = getString(
+                R.string.send_notficatio_i_am_here_1,
+                count.toString(),
+            )
+
+//            if (HelperUtils.getLang(this) == "ar"){
+//                heretxt.text  = "Send Notfication I am Here ($count) "
+//
+//            }else {
+//                heretxt.text  = "ارسل اشعار انا هنا ($count)"
+//
+//            }
+
+
+//            count++
             print(count)
 
 

@@ -9,6 +9,7 @@ import android.content.res.Configuration
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
+import android.os.Message
 import android.provider.Settings
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -94,4 +95,7 @@ object HelperUtils {
     @SuppressLint("HardwareIds")
     fun getAndroidID(mContext: Context?): String =
         Settings.Secure.getString(mContext?.contentResolver, Settings.Secure.ANDROID_ID)
+    fun showMessage(context: Context,message: String){
+        Toast.makeText(context,message,Toast.LENGTH_SHORT).show()
+    }
 }

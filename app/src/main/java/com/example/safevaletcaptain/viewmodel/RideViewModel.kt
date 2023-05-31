@@ -1,6 +1,7 @@
 package com.example.safevaletcaptain.viewmodel
 
 import android.app.Application
+import android.util.Log.e
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
@@ -80,6 +81,7 @@ class RideViewModel(application: Application): AndroidViewModel(application) {
 //    ride info
     fun getdriverCustomerInfo(){
         viewModelScope.launch{
+            e("ayham",uid)
             driverCustomerInfoLiveData.value = repo.driverStatutsCustomerInfo(uid,language)
         }
     }

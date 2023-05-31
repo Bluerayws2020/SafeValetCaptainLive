@@ -76,12 +76,13 @@
     <string name="location_description">Location Description</string>
     <string name="key_number">Key Number</string>>
     <string name="valdateKey">Please Add  Key Number</string>
-    <string name="send_notficatio_i_am_close">send Notficatio I am Close</string>
-    <string name="line_app_car">Line App Car</string>
+    <string name="send_notficatio_i_am_close">send Notification I am Close</string>
+    <string name="line_app_car">Line up Car</string>
     <string name="press_the_button_below_when_delivering_the_car_to_the_customer">Press the button below when delivering the car to the customer</string>
     <string name="the_car_will_parked">The car will parked</string>
     <string name="tottalTime">Tottal Time : (%s)</string>
-    <string name="send_notficatio_i_am_here_1">send Notficatio I am Here (%s)</string>
-    <string name="send_notficatio_i_am_here">send Notficatio I am Here</string>
+    <string name="send_notficatio_i_am_here_1">send Notification I am Here (%s)</string>
+    <string name="send_notficatio_i_am_here">send Notification I am Here</string>
+    <string name="back_car_to_the_park">back Car to the Park</string>
 
 </resources>

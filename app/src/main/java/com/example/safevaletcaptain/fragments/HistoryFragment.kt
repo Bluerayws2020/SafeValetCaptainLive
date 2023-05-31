@@ -3,6 +3,7 @@ package com.example.safevaletcaptain.fragments
 import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +33,9 @@ import com.example.safevaletcaptain.model.RideModel
 import com.example.safevaletcaptain.viewmodel.RideViewModel
 
 class HistoryFragment: AppCompatActivity() {
-
+    init {
+        d("ayham","HistoryFragment")
+    }
     private var navController: NavController? = null
     private var historyAdapter: HistoryAdapter? = null
     private val rideViewModel by viewModels<RideViewModel>()

@@ -7,6 +7,7 @@ import android.content.Intent
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.util.Log
+import android.util.Log.d
 import android.view.Gravity
 import android.view.View
 import android.widget.Button
@@ -45,7 +46,9 @@ import java.util.*
 
 
 class HomeActivity: AppCompatActivity() {
-
+    init {
+        d("ayham","HomeActivity")
+    }
     private lateinit var binding: ActivityHomeBinding
     private var navController: NavController? = null
     private lateinit var appBarConfiguration: AppBarConfiguration

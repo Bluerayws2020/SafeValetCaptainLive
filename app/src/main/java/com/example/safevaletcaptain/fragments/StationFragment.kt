@@ -2,6 +2,7 @@ package com.example.safevaletcaptain.fragments
 
 import android.app.ActionBar
 import android.os.Bundle
+import android.util.Log.d
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
@@ -19,6 +20,10 @@ import com.example.safevaletcaptain.databinding.StationBinding
 import com.example.safevaletcaptain.helpers.HelperUtils
 
 class StationFragment: BaseFragment<StationBinding>() {
+
+    init {
+        d("ayham","StationFragment")
+    }
 
     private var navController: NavController? = null
     private var carAdapter: CarAdapter? = null

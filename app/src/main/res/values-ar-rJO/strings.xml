@@ -64,5 +64,6 @@
     <string name="parking">اصطفاف</string>
     <string name="send_notficatio_i_am_here_1">(%s)ارسال اشعار انا هنا </string>
     <string name="send_notficatio_i_am_here">ارسل اشعار انا هنا</string>
+    <string name="back_car_to_the_park">back Car to the Park</string>
 
 </resources>

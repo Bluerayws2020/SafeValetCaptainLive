@@ -10,6 +10,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.util.Log.d
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +39,10 @@ import java.util.*
 
 
         class TripInProgressFragment: AppCompatActivity(){
+
+            init {
+                d("ayham","TripInProgressFragment")
+            }
 
         private var navController: NavController? = null
 
