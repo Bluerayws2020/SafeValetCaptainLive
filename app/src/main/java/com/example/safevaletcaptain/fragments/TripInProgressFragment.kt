@@ -221,6 +221,8 @@ val key_num = binding.keyNumtxt.text
 
     if (key_num.isNullOrEmpty() ){
         Toast.makeText(this, resources.getString(R.string.valdateKey), Toast.LENGTH_SHORT).show()
+        binding.sendBtn.show()
+        binding.progressBarTrip.hide()
     }else {
         rideViewModel.sendKey(key_num.toString(),loc_desc.toString())
 
