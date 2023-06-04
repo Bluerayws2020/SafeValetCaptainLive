@@ -6,14 +6,9 @@ import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
-import android.util.Log.d
 import android.view.Gravity
 import android.view.View
-import android.widget.Button
-import android.widget.LinearLayout
-import android.widget.PopupWindow
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -32,10 +27,6 @@ import com.google.android.material.card.MaterialCardView
 
 
 class PickingCarFragment: AppCompatActivity() {
-
-    init {
-        d("ayham","PickingCarFragment")
-    }
 
     private var navController: NavController? = null
     private var carAdapter: CarAdapter? = null
@@ -68,26 +59,26 @@ class PickingCarFragment: AppCompatActivity() {
 
         getDataDriver()
 //            Log.d("ride_id",intent?.getStringExtra("ride_ida").toString())
-        binding.whiteMyCar.text = intent?.getStringExtra("car_number").toString()
+//        binding.whiteMyCar.text = intent?.getStringExtra("car_number").toString()
 
         ride_id = intent?.getStringExtra("rideId").toString()
         lat = intent?.getStringExtra("lat").toString()
         lon = intent?.getStringExtra("lon").toString()
-            image = intent?.getStringExtra("image").toString()
+        image = intent?.getStringExtra("image").toString()
 
 
-        val keyNumber = intent?.getStringExtra("key_number").toString()
-        binding.keyNum.text = keyNumber
+//        val keyNumber = intent?.getStringExtra("key_number").toString()
+//        binding.keyNum.text = keyNumber
 
-        if (keyNumber.equals(null))
-            binding.keyNum.text = "-"
+//        if (keyNumber.equals(null))
+//            binding.keyNum.text = "-"
 
-val carImage =  image
-Glide.with(applicationContext)
-    .load(carImage)
-    .placeholder(R.drawable.logocaptin)
-    .error(R.drawable.logocaptin)
-    .into(binding.carImg)
+        val carImage =  image
+        Glide.with(applicationContext)
+            .load(carImage)
+//            .placeholder(R.drawable.logocaptin)
+            .error(R.drawable.logocaptin)
+            .into(binding.carImg)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         this.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
@@ -124,7 +115,7 @@ Glide.with(applicationContext)
         }
 
         binding.direction.setOnClickListener{
-Log.d("LATTT",lat)
+            Log.d("LATTT",lat)
             Log.d("LATTT",lon)
 
             if (lat.isNotEmpty() && lon.isNotEmpty()) {
@@ -191,7 +182,7 @@ Log.d("LATTT",lat)
         val containerCarPark: LinearLayout =
             popUpView.findViewById<View>(R.id.containerCarPark) as LinearLayout
         val heretxt: Button = popUpView.findViewById<Button>(R.id.heretxt)
-        var count = 0
+        var count = 1
         heretxt.text = getString(
             R.string.send_notficatio_i_am_here_1,
             count.toString(),
@@ -316,7 +307,7 @@ Log.d("LATTT",lat)
                 is NetworkResults.Success -> {
                     if (result.data.msg.newStatus == 5) {
                         binding.keyNum.text = result.data.keyNumber.toString()
-                        binding.carModel.text = result.data.customerInfo?.carNumber
+                        binding.whiteMyCar.text = result.data.customerInfo?.carNumber
                         lat = result.data.lat.toString()
                         lon = result.data.lon.toString()
 
